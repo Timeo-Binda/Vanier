@@ -226,14 +226,94 @@ body{
   }
 }
 
-.svg-container {
-  width: 400px;
-  height: 400px;
-  overflow: hidden;
-  background: #0a0c3e;
-  border-radius: 5%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+
+
+
+
+
+
+
+/* Styles par défaut pour la face avant */
+.block {
+    width: 400px;
+    height: 400px;
+    perspective: 1000px;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    margin: 10px;
 }
+
+.card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    position: relative;
+    transform-origin: center center; /* Ajuste le point de transformation au centre */
+}
+
+.svg-container {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 2px solid black;
+    border-radius: 20px;
+    position: absolute;
+    background-color: ##0a0c3e;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    transform: rotateY(0deg);
+    z-index: 2;
+}
+
+.back {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+    background-color: black; 
+    border-radius: 20px;
+    transform: rotateY(180deg);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.block:hover .back {
+    opacity: 1;
+}
+
+
+.block:hover .card {
+    transform: rotateY(180deg);
+}
+
+
+.block p:last-child {
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 p {
   width: 100%;
@@ -241,9 +321,13 @@ p {
   font-size: 1rem;
   font-weight: 700;
   color: #f7f2e1;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin: 5%;
   font-family: "Montserrat", sans-serif;
+}
+
+.type{
+  color: red;
+  font-weight: 500;
 }
 
 
