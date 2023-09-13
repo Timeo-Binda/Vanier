@@ -274,7 +274,7 @@ body{
     height: 100%;
     backface-visibility: hidden;
     position: absolute;
-    background-color: black; 
+    background-color: #17034f; 
     border-radius: 20px;
     transform: rotateY(180deg);
     z-index: 1;
