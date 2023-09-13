@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_index.css">
+    <title>Home timéo's Website</title>
+</head>
+
+<body>
+    <header>
+            <h1>Welcome to Timéo's Website</h1>
+    </header>
+
+<!-- <button class="dm" id="dark-mode-btn"><img src="media/dm.png" alt=""></button> -->
+
+    <main>
+        <div class="card-group">
+            <a href="animations.html" class="card">
+                <h2>Animations</h2>
+            </a>
+            <a href="portfolio.html" class="card">
+                <h2>Portfolio</h2>
+            </a>
+        </div>
+    </main>
+    <script src="script.js"></script>
+
+
+
+</body>
+
+</html>
+
+
+<script>
+    const darkModeButton = document.getElementById('dark-mode-btn');
+        const body = document.body;
+        const cards = document.querySelectorAll('.card');
+
+        let isDarkMode = false;
+
+        darkModeButton.addEventListener('click', () => {
+            isDarkMode = !isDarkMode;
+
+            if (isDarkMode) {
+                body.classList.add('dark-mode');
+                cards.forEach(card => {
+                    card.classList.add('dark-mode');
+                });
+            } else {
+                body.classList.remove('dark-mode');
+                cards.forEach(card => {
+                    card.classList.remove('dark-mode');
+                });
+            }
+        });
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
