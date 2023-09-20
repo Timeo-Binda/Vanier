@@ -1,0 +1,7 @@
+.circle_clock {
+  border-radius: 50%;
+  fill: #f0f0f0; /* Couleur de remplissage */
+  filter: drop-shadow: 9px 9px 16px rgb(0,0,0,0.6), -9px -9px 16px    rgba(255,255,255, 0.5);
+}
+
+
