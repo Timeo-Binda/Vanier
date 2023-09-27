@@ -9,55 +9,84 @@
 </head>
 
 <body>
-    <header>
-            <h1>Welcome to Timéo's Website</h1>
-    </header>
-
-<!-- <button class="dm" id="dark-mode-btn"><img src="media/dm.png" alt=""></button> -->
-
-    <main>
-        <div class="card-group">
-            <a href="4_animations/animations.html" class="card">
-                <h2>Animations</h2>
-            </a>
-            <a href="portfolio.html" class="card">
-                <h2>Portfolio</h2>
-            </a>
+<div class="nav">
+    <input type="checkbox" id="nav-check">
+    <div class="nav-header">
+        <div class="nav-title">
+            <div class="current" >
+                 Welcome on Timéo's Website
+            </div>
         </div>
-    </main>
-    <script src="script.js"></script>
+    </div>
+    <div class="nav-btn">
+        <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    </div>
+
+    <div class="nav-links">
+        <ul class="snip1189">
+        <li><a  href="portfolio/portfolio.html" >Portfolio</a></li>
+        <li><a href="videos/video.html">Videos</a></li>
+        <li><a href="web_3/web_3.html">Web 3</a></li>
+        <li><a href="web_5/web_5.html">Web 5</a></li>
+        <li><a href="#">Client Project</a></li>
+            </ul>
+    </div>
+</div>
+
+    <div>
+        <h2>About Me</h2>
+        <div class="about">
+            <div>
+            <p>Hey everyone! I'm Timéo, a French student currently enrolled at Cégep de Vanier. I'm passionate about music,
+            particularly drumming, and I'm also deeply interested in photography and video creation.</p>
+            <p>
+            Photography allows me to capture unique moments, while video creation excites me because it can tell compelling stories.
+            I value minimalism in design, as I believe it's crucial for effective communication. I'm also keen to explore web
+            development, given its importance in today's digital age.</p>
+            <p>
+            In summary, I'm Timéo, an enthusiastic student with a love for music, photography, and video, along with a strong
+            interest in minimalist design and web development. I approach design with an open mind and value collective efforts,
+            consistency, and creativity.</p>
+            </p>
+            </div>
+            <img class="pp" src="media/images/drum_pp.jpg" alt="">
+        </div>
+    </div>
+    <h2>My projects</h2>
 
 
 
-</body>
-
-</html>
 
 
-<script>
-    const darkModeButton = document.getElementById('dark-mode-btn');
-        const body = document.body;
-        const cards = document.querySelectorAll('.card');
 
-        let isDarkMode = false;
 
-        darkModeButton.addEventListener('click', () => {
-            isDarkMode = !isDarkMode;
 
-            if (isDarkMode) {
-                body.classList.add('dark-mode');
-                cards.forEach(card => {
-                    card.classList.add('dark-mode');
-                });
-            } else {
-                body.classList.remove('dark-mode');
-                cards.forEach(card => {
-                    card.classList.remove('dark-mode');
-                });
-            }
-        });
 
-</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

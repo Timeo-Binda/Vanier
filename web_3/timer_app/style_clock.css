@@ -7,52 +7,61 @@ body {
 }
 
 .clock {
-    margin: 5%;
-    grid-column: 2 / 3;
-    grid-row: 1 / 3;
-    width: 12rem;
-    height: 12rem;
-    justify-self: center;
-    box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #fff;
-    border-radius: 50%;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    position: relative;
+  margin: 5%;
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  width: 12rem;
+  height: 12rem;
+  justify-self: center;
+  box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.clock .hour-hand, .clock .minute-hand, .clock .second-hand {
+  position: absolute;
+  border-radius: 0.2rem;
+  z-index: 200;
+  transform-origin: 0 0; /* Centrez les transformations par rapport au bas de l'aiguille */
+  left: 50%; /* Position horizontale centrée */
+  top: 50%; /* Position verticale centrée */
+  transform: translateX(-50%) translateY(-100%); /* Centrer horizontalement et déplacer vers le haut */
 }
 
 .clock .hand {
-    position: absolute;
-    border-radius: 0.2rem;
-    z-index: 200;
-    transition: transform 0.5s cubic-bezier(0.4, 2.5, 0.4, 0.9);
+  position: absolute;
+  z-index: 200;
+  transform-origin: top center; /* Axe de rotation en haut de l'aiguille */
+  top: 50%; /* Position verticale centrée */
+  left: 50%; /* Position horizontale centrée */
+  transition: transform 0.5s cubic-bezier(0.4, 2.5, 0.4, 0.9);
 }
 
 .clock .hour-hand {
-    width: 0.4rem;
-    height: 3.2rem;
-    background: var(--greyLight-3);
-    transform-origin: 50% 100%;
-    transform: translateX(-50%) translateY(-100%); /* Centrer horizontalement et déplacer vers le haut */
+  /* Styles pour l'aiguille des heures */
+  width: 0.2rem;
+  height: 3.2rem;
+  background: #321686;
+  transform: translateX(-50%) translateY(-100%); /* Réglez correctement la position */
 }
 
 .clock .minute-hand {
-    width: 0.4rem;
-    height: 4.6rem;
-    background: var(--greyDark);
-    transform-origin: 50% 100%;
-    transform: translateX(-50%) translateY(-100%); /* Centrer horizontalement et déplacer vers le haut */
+  /* Styles pour l'aiguille des minutes */
+  width: 0.2rem;
+  height: 4.6rem;
+  background: #321546;
+  transform: translateX(-50%) translateY(-100%); /* Réglez correctement la position */
 }
 
 .clock .second-hand {
-    width: 0.2rem;
-    height: 5.2rem;
-    background: #FF0047;
-    transform-origin: 50% 100%;
-    transform: translateX(-50%) translateY(-100%); /* Centrer horizontalement et déplacer vers le haut */
+  /* Styles pour l'aiguille des secondes */
+  width: 0.2rem;
+  height: 5.2rem;
+  background: #FF0047;
+  transform: translateX(-50%) translateY(-100%); /* Réglez correctement la position */
 }
 
 
