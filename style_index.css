@@ -11,6 +11,10 @@ body {
   
 }
 
+main{
+  padding-inline :15%;
+}
+
 .nav {
   height: 100%;
   width: 100%;
@@ -106,10 +110,10 @@ h2{
   background: none;
   margin:0;
   padding:0;
-  margin-inline: 3%;
   margin-top: 5%;
   border-bottom: 2px solid #c0392b; 
   padding-bottom: 5px;
+  margin-bottom: 3%;
 
 
   
@@ -119,7 +123,7 @@ p{
   background: none;
   margin:0;
   padding:0;
-  margin-inline: 4.5%;
+  margin-right: 5%;
   margin-top: 1%;
   
 }
@@ -132,6 +136,8 @@ p{
 }
 
 @media (max-width: 768px) {
+  main{
+    padding-inline :5%;}
   .about {
     flex-direction: column; /* Passe en mode colonne */
     padding-right: 0; /* Supprime le padding droit pour économiser de l'espace */
@@ -139,7 +145,7 @@ p{
   }
   p{
       margin-bottom: 5%;
-      margin-inline: 3%;
+      margin-right: 0%;
   }
 }
 .pp{
@@ -253,102 +259,110 @@ p{
 
 
 
-/* body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f7f2e1;
-  margin: 0;
-  padding: 0;
-}
-
-
-// gradient: https://www.gradientmagic.com/collection/rainbowstandard
-@import url("https://fonts.googleapis.com/css?family=Lato:300"); 
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #222;
-}
-header {
-  background-color: #171717;
-  color: #fff;
+/* Style de la liste non ordonnée */
+.projects {
+  list-style: none;
   padding: 0;
   margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Trois colonnes par défaut sur les écrans larges */
+  grid-gap: 10px; /* Espacement entre les éléments */
+  margin-bottom: 5%;
+}
+
+/* Style des éléments de la liste */
+.projects li {
+  width: 100%; /* Les éléments occupent toute la largeur de la colonne */
+  position: relative; /* Ajout d'une position relative pour positionner le titre */
+}
+
+/* Style des liens dans les éléments */
+.projects li a {
+  display: block;
   text-align: center;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  position: relative; /* Ajout de position relative pour le titre */
 }
 
-#dark-mode-btn {
-  order: 2;
+/* Style des images à l'intérieur des liens */
+.projects li a img {
+  max-width: 100%; /* Les images ne dépasseront pas la largeur des liens */
+  height: auto; /* Pour maintenir le ratio de l'image */
 }
 
-h1 {
-  font-size: 24px;
-  font-weight: normal;
+/* Style pour le voile gris au survol de la carte */
+.project_card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Couleur de fond grise avec une transparence */
+  opacity: 0; /* Initialement invisible */
+  transition: opacity 0.3s ease; /* Transition douce pour l'opacité */
 }
 
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+/* Réglages pour le titre à l'intérieur de la carte */
+.project_card h3.project_title {
+  position: absolute;
+  top: 50%; /* Centre verticalement */
+  left: 0; /* Début depuis la gauche de la carte */
+  transform: translateY(-50%); /* Centre parfaitement le titre sur l'axe Y */
+  opacity: 0; /* Initialement invisible */
+  color: #fff; /* Couleur du texte du titre */
+  z-index: 1; /* Place le titre au-dessus du voile gris */
+  transition: opacity 0.3s ease, left 0.3s ease, transform 0.3s ease; /* Transition douce pour l'opacité, la position et la transformation */
 }
 
-.card-group {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  max-width: 100%;
-  width: 80%;
-  margin: 0 auto;
-  flex-wrap: wrap;
+/* Centrer le titre sur l'axe horizontal (X) lors du hover */
+.project_card:hover h3.project_title {
+  opacity: 1; /* Affiche le titre au survol */
+  left: 50%; /* Centre sur l'axe horizontal (X) */
+  transform: translateX(-50%); /* Centre parfaitement sur l'axe X */
 }
 
-.card {
-  background-color: #171717;
-  display: flex;
-  color: white;
-  border-radius: 10px;
-  padding: 10% 10%;
-  text-align: center;
-  justify-content: center;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Add border-color transition 
-  width: 45%;
-  max-width: 45%;
-  min-width: 250px;
-  aspect-ratio: 1/0.7;
-  border: 2px solid transparent; /* Add initial transparent border 
+/* Affiche le titre au survol */
+.project_card:hover::after {
+  opacity: 1; /* Rendre le voile gris visible au survol */
 }
 
-.card:hover {
-  background-color: transparent; /* Remove background color on hover 
-  color: #171717; /* Change text color to #171717 on hover 
-  border-color: #171717; /* Change border color to #171717 on hover 
-}
-
-
-
-h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0;
-}
-
-@media (min-width: 1024px) {
-  .card-group {
-    flex-wrap: nowrap;
-  }
-
-  .card {
-    width: calc(50% - 20px);
-    max-width: calc(50% - 20px);
+/* Réglages pour deux colonnes sur les écrans moyens */
+@media (max-width: 1024px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
   }
 }
 
+/* Réglages pour une colonne sur les écrans étroits */
+@media (max-width: 767px) {
+  .projects {
+    grid-template-columns: repeat(1, 1fr); /* Une colonne */
+  }
+
+    .project_card h3.project_title {
+    position: static; /* Désactive la position absolue pour le titre */
+    opacity: 1; /* Rend le titre toujours visible */
+    color: #000; /* Couleur du texte du titre en noir */
+    text-align: center; /* Centre le texte */
+    text-decoration: none; /* Supprime le soulignement du lien */
+    font-size: 14px; /* Taille de police plus petite */
+    margin-top: 10px; /* Espacement par rapport à l'image */
+}
 
 
 
- */
+footer, .footer {
+    background-color: #161616;
+    text-align: center;
+    padding: 20px 0;
+    color: #fff;
+    font-size: 18px;
+}
+
+/* Styles pour les appareils mobiles */
+@media (max-width: 767px) {
+    footer {
+        font-size: 16px;
+    }
+}
+
